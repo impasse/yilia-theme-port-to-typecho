@@ -83,7 +83,7 @@
             </section>
             <section class="switch-part switch-part2">
               <div class="widget tagcloud" id="js-tagcloud">
-              <?php echo yqccloudtags();?>
+              <?php echo yqccloudtags(); ?>
               </div>
             </section>
             <section class="switch-part switch-part3">

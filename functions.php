@@ -35,7 +35,7 @@ function yqccloudtags(){
   $outcloud ='';
   if($tags->have()){
     while ($tags->next()){
-      $outcloud .= '<a href="'.$tags->permalink.'">'.$tags->name.'</a>';
+      $outcloud .= '<a rel="tag" href="'.$tags->permalink.'">'.$tags->name.'</a>';
     }
   }
   return $outcloud;
