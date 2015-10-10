@@ -1,3 +1,4 @@
+<?php if(!empty($this->options->duoshuo)): ?>
 <div id="comments" class="duoshuo"> 
 <?php if($this->allow('comment')): ?>
 <!-- 多说评论框 start -->
@@ -21,3 +22,4 @@ var duoshuoQuery = {short_name:"<?php echo $this->options->duoshuo;?>"};
 <h4><?php _e('评论已关闭'); ?></h4> 
 <?php endif; ?> 
 </div>
+<?php endif; ?>

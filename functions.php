@@ -9,6 +9,8 @@ function themeConfig($form) {
      $form->addInput($duoshuo);
      $jiathis = new Typecho_Widget_Helper_Form_Element_Text('jiathis',NULL,NULL,'jiathis的UID','JiaThis代码中的UID');
      $form->addInput($jiathis);
+     $ujian = new Typecho_Widget_Helper_Form_Element_Text('ujian',NULL,NULL,'友荐的UID','友荐代码中的UID');
+     $form->addInput($ujian);
      $links = new Typecho_Widget_Helper_Form_Element_Textarea('links', NULL, NULL, _t('友情链接'),'格式为:名称|URL，每行一个');
      $form->addInput($links);
      $aboutme = new Typecho_Widget_Helper_Form_Element_Textarea('aboutme', NULL, NULL, _t('个人说明'),'首页个人说明内容');
