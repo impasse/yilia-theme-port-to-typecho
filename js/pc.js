@@ -86,6 +86,34 @@ define([], function(){
 			slide(idx);
 			Tips.hide();
 		});
+		
+		//是否新窗口打开链接
+        if(yiliaConfig.open_in_new == true){
+            $(".article a[href]").attr("target", "_blank")
+        }
+        
+        //是否开启动画
+        if(yiliaConfig.animate === true){
+            if(yiliaConfig.isHome === true){
+              //content
+			function showArticle(){
+				$(".article").each(function(){
+					if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
+						$(this).removeClass("hidden").addClass("show");
+						$(this).addClass("is-hiddened");
+					}else{
+						if(!$(this).hasClass("is-hiddened")){
+							$(this).addClass("hidden");
+						}
+					}
+				});
+			}
+			$(window).on('scroll', function(){
+				showArticle();
+			});
+			showArticle();
+		}
+		
 	}
 
 	

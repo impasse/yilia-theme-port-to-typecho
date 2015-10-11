@@ -100,34 +100,4 @@ require([], function (){
 	});
 	
 	$(".js-avatar").addClass("show").fadeIn();
-	
-	//是否开启动画
-	if(yiliaConfig.animate === true && !browser.versions.mobile){
-		if(yiliaConfig.isHome === true){
-			//content
-			function showArticle(){
-				$(".article").each(function(){
-					if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
-						$(this).removeClass("hidden").addClass("show");
-						$(this).addClass("is-hiddened");
-					}else{
-						if(!$(this).hasClass("is-hiddened")){
-							$(this).addClass("hidden");
-						}
-					}
-				});
-			}
-			$(window).on('scroll', function(){
-				showArticle();
-			});
-			showArticle();
-		}
-		
-	}
-	
-	//是否新窗口打开链接
-	if(yiliaConfig.open_in_new == true && !browser.versions.mobile){
-		$(".article a[href]").attr("target", "_blank")
-	}
-	
 });
