@@ -21,7 +21,7 @@
   </div>
 </article>
 
-
+<?php if(!empty($this->options->jiathis)): ?>
 <div class="share">
 <!-- JiaThis Button BEGIN -->
 <div class="jiathis_style">
@@ -40,6 +40,7 @@ var jiathis_config = {data_track_clickback:'true'};
 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=<?php echo $this->options->jiathis;?>" charset="utf-8"></script>
 <!-- JiaThis Button END -->
 </div>
+<?php endif; ?>
 
 <?php $this->need('comments.php'); ?>
 
