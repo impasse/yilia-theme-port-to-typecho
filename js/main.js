@@ -55,8 +55,8 @@ require([], function (){
 
 	//是否使用fancybox
 	if(yiliaConfig.fancybox === true){
-        $("<link>").attr({ rel: "stylesheet",type: "text/css",href: yiliaConfig.base_url+"/fancybox/jquery.fancybox.css"}).appendTo("head");
-		require([yiliaConfig.base_url+'/fancybox/jquery.fancybox.js'], function(pc){
+        $("<link>").attr({ rel: "stylesheet",type: "text/css",href: 'http://apps.bdimg.com/libs/fancybox/2.1.5/jquery.fancybox.min.css'}).appendTo("head");
+		require(['http://apps.bdimg.com/libs/fancybox/2.1.5/jquery.fancybox.min.js'], function(pc){
 			var isFancy = $(".isFancy");
 			if(isFancy.length != 0){
 				var imgArr = $(".article-inner img");
@@ -73,23 +73,37 @@ require([], function (){
 	if(yiliaConfig.prettify === true){
         if($("code").length>0){
         $("<link>").attr({ rel: "stylesheet",type: "text/css",href: yiliaConfig.base_url+"/css/desert.css"}).appendTo("head");
-        require([yiliaConfig.base_url+'/js/prettify.js'],function(){
+        require(['http://apps.bdimg.com/libs/prettify/r298/prettify.min.js'],function(){
              $("pre").addClass("prettyprint");
              prettyPrint();
         });
         }
 	}
+	
+	//for fast add netease cloud music
+	$(".article-entry a").each(function(){
+        var re = /http:\/\/music\.163\.com\/#\/m\/song\?id=([0-9]+)/;
+        var match = $(this).attr("href").match(re);
+        if(match!=null){
+            var w = $(this).parent().width();
+            var h = $(this).height();
+            if(w>510){
+                w=510;
+            }
+            if(w<280){
+                w=280;
+            }
+            $(this).replaceWith(
+            $('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width='+w+' height=86 src="http://music.163.com/outchain/player?type=2&id='+match[1]+'&auto=0&height=66"></iframe>')
+            );
+        }
+	});
+	
 	//是否开启动画
 	if(yiliaConfig.animate === true){
-
-		require([yiliaConfig.base_url+'/js/jquery.lazyload.js'], function(){
-			//avatar
-			$(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
-			$(".js-avatar")[0].onload = function(){
-				$(".js-avatar").addClass("show");
-			}
-		});
-		
+	
+		$(".js-avatar").addClass("show").fadeIn();
+			
 		if(yiliaConfig.isHome === true){
 			//content
 			function showArticle(){

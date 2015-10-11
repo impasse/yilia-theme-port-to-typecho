@@ -21,7 +21,7 @@
     <div class="intrude-less">
       <header id="header" class="inner">
         <a href="<?php $this->options->siteUrl(); ?>" class="profilepic">
-          <img lazy-src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar"/>
+          <img src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar"/>
         </a>
 
         <hgroup>
@@ -75,9 +75,9 @@
               </nav>
               <nav class="header-nav">
                 <div class="social">
-                  <a class="github" target="_blank" href="<?php echo $this->options->github_url; ?>" title="github">github</a>
-                  <a class="weibo" target="_blank" href="<?php echo $this->options->weibo_url;?>" title="weibo">weibo</a>
-                  <a class="rss" target="_blank" href="<?php $this->options->feedUrl();?>" title="rss">rss</a>
+                  <a class="github" rel="bookmark" target="_blank" href="<?php echo $this->options->github_url; ?>" title="github">github</a>
+                  <a class="weibo" rel="bookmark" target="_blank" href="<?php echo $this->options->weibo_url;?>" title="weibo">weibo</a>
+                  <a class="rss" rel="bookmark" target="_blank" href="<?php $this->options->feedUrl();?>" title="rss">rss</a>
                 </div>
               </nav>
             </section>
@@ -97,9 +97,9 @@
               foreach($links as $link){
               if(strpos($link,'|')!=FALSE){
                 $s = explode('|',$link);
-                echo '<a target="_blank" class="main-nav-link switch-friends-link" href="'.$s[1].'">'.$s[0].'</a><br/>';
+                echo '<a rel="friend" target="_blank" class="main-nav-link switch-friends-link" href="'.$s[1].'">'.$s[0].'</a><br/>';
                 }else{
-                echo '<a target="_blank" class="main-nav-link switch-friends-link" href="'.$link.'">'.$link.'</a><br/>';
+                echo '<a rel="friend" target="_blank" class="main-nav-link switch-friends-link" href="'.$link.'">'.$link.'</a><br/>';
                 }
               }
               }
@@ -120,7 +120,7 @@
       <div class="intrude-less">
         <header id="header" class="inner">
           <div class="profilepic">
-            <img lazy-src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar">
+            <img src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar">
           </div>
 
           <hgroup>
