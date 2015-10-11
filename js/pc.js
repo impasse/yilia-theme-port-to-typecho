@@ -87,15 +87,12 @@ define([], function(){
 			Tips.hide();
 		});
 		
-		//是否新窗口打开链接
         if(yiliaConfig.open_in_new == true){
-            $(".article a[href]").attr("target", "_blank")
+            $(".article a[href]").attr("target", "_blank");
         }
         
-        //是否开启动画
         if(yiliaConfig.animate === true){
             if(yiliaConfig.isHome === true){
-              //content
 			function showArticle(){
 				$(".article").each(function(){
 					if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
@@ -112,11 +109,9 @@ define([], function(){
 				showArticle();
 			});
 			showArticle();
+			}
 		}
-		
 	}
-
-	
 
 	return {
 		init: function(){
@@ -125,4 +120,4 @@ define([], function(){
 			Tips.init();
 		}
 	}
-});
+})
