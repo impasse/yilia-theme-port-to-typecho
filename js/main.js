@@ -99,11 +99,10 @@ require([], function (){
         }
 	});
 	
-	//是否开启动画
-	if(yiliaConfig.animate === true){
+	$(".js-avatar").addClass("show").fadeIn();
 	
-		$(".js-avatar").addClass("show").fadeIn();
-			
+	//是否开启动画
+	if(yiliaConfig.animate === true && !browser.versions.mobile){
 		if(yiliaConfig.isHome === true){
 			//content
 			function showArticle(){
