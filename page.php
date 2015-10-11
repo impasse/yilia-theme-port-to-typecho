@@ -1,5 +1,5 @@
 <?php $this->need('header.php'); ?>
-
+<div class="body-wrap">
 <article id="post-douban-index-for-chrome" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="<?php $this->permalink() ?>" class="article-date">
@@ -43,5 +43,5 @@ var jiathis_config = {data_track_clickback:'true'};
 <?php endif; ?>
 
 <?php $this->need('comments.php'); ?>
-
+</div>
 <?php $this->need('footer.php'); ?>

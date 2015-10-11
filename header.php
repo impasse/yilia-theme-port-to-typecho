@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8"/>
+<meta name="theme-color" content="#4d4d4d"/>
 <?php if($this->is('index')){?>
 <title><?php $this->options->title() ?> - <?php $this->options->description() ?></title>
 <?php }else{?>
 <title><?php $this->archiveTitle(' &raquo; ', '', ' - '); ?><?php $this->options->title(); ?></title>
 <?php }?>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="icon" href="<?php $this->options->themeUrl();?>favicon.ico">
-<link rel="stylesheet" href="<?php $this->options->themeUrl();?>css/style.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<link rel="icon" href="<?php $this->options->themeUrl();?>favicon.ico"/>
+<link rel="stylesheet" href="<?php $this->options->themeUrl();?>css/style.min.css" type="text/css">
 <!--[if lte IE 8]><script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script><![endif]-->
 <?php $this->header(); ?>
 <?php echo $this->options->analysis; ?>
@@ -28,11 +29,6 @@
         <h1 class="header-author"><a href="/"><?php $this->options->title(); ?></a></h1>
         </hgroup>
         <p class="header-subtitle"><?php $this->options->description() ?></p>
-        <!--搜索框
-        <form method="post" id="searchform" action="<?php $this->options->siteUrl(); ?>">
-        <input type="text" id="sear_txt" name="s" placeholder="Search..."/>
-        </form>
-        -->
         <div class="switch-btn">
           <div class="icon">
             <div class="icon-ctn">
