@@ -22,7 +22,7 @@
     <div class="intrude-less">
       <header id="header" class="inner">
         <a href="<?php $this->options->siteUrl(); ?>" class="profilepic">
-          <img src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar"/>
+          <img alt="avatar" src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar"/>
         </a>
 
         <hgroup>
@@ -116,7 +116,7 @@
       <div class="intrude-less">
         <header id="header" class="inner">
           <div class="profilepic">
-            <img src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar">
+            <img alt="avatar" src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar">
           </div>
 
           <hgroup>
