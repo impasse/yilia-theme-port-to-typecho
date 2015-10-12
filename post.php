@@ -17,6 +17,9 @@
         <div class="article-tag tagcloud">
             <?php echo yqctags($this);?>
         </div>
+        <div class="article-category tagcloud">
+            <?php $this->category(""); ?>
+        </div>
     </div>
     <div class="clearfix"></div>
         <div class="article-entry" itemprop="articleBody">

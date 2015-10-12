@@ -32,6 +32,9 @@
             <div class="article-tag tagcloud">
                 <?php echo yqctags($this);?>
             </div>
+            <div class="article-category tagcloud">
+            	<?php $this->category(""); ?>
+            </div>
             <p class="article-more-link">
                 <a href="<?php $this->permalink();?>#more">more >></a>
             </p>
