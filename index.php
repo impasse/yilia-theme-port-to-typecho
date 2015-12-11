@@ -12,7 +12,7 @@
 <div class="body-wrap">
     <?php while($this->next()):?>
 
-    <article class="article article-type-post" itemscope itemprop="blogPost">
+    <article class="article article-type-post" data-thread-key="<?php echo $this->cid;?>" itemscope itemprop="blogPost">
       <div class="article-meta">
         <a href="<?php $this->permalink() ?>" class="article-date">
         <time datetime="<?php $this->date('Y-m-d\TH:i:s.000\Z'); ?>" itemprop="datePublished"><?php $this->date('M j');?></time>
@@ -36,7 +36,7 @@
             	<?php $this->category(""); ?>
             </div>
             <p class="article-more-link">
-                <a href="<?php $this->permalink();?>#more">more >></a>
+                <a href="<?php $this->permalink();?>#more">更多内容&gt;&gt;</a>
             </p>
             <div class="clearfix"></div>
         </div>

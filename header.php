@@ -10,7 +10,7 @@
 <?php }?>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <link rel="icon" href="<?php $this->options->themeUrl();?>favicon.ico"/>
-<link rel="stylesheet" href="<?php $this->options->themeUrl();?>css/style.min.css" type="text/css">
+<link rel="stylesheet" href="<?php $this->options->themeUrl();?>css/style.css" type="text/css">
 <!--[if lte IE 8]><script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script><![endif]-->
 <?php $this->header(); ?>
 <?php echo $this->options->analysis; ?>
@@ -22,7 +22,7 @@
     <div class="intrude-less">
       <header id="header" class="inner">
         <a href="<?php $this->options->siteUrl(); ?>" class="profilepic">
-          <img alt="avatar" src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar"/>
+          <img src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar"/>
         </a>
 
         <hgroup>
@@ -87,19 +87,21 @@
             </section>
             <section class="switch-part switch-part4">
                 <div id="js-friends">
+                  <ul>
               <?php
               if($this->options->links!=""){
               $links = explode("\n",$this->options->links);
               foreach($links as $link){
               if(strpos($link,'|')!=FALSE){
                 $s = explode('|',$link);
-                echo '<a rel="friend" target="_blank" class="main-nav-link switch-friends-link" href="'.$s[1].'">'.$s[0].'</a><br/>';
+                echo '<li><a rel="friend" target="_blank" class="main-nav-link switch-friends-link" href="'.$s[1].'">'.$s[0].'</a></li>';
                 }else{
-                echo '<a rel="friend" target="_blank" class="main-nav-link switch-friends-link" href="'.$link.'">'.$link.'</a><br/>';
+                echo '<li><a rel="friend" target="_blank" class="main-nav-link switch-friends-link" href="'.$link.'">'.$link.'</a></li>';
                 }
               }
               }
               ?>
+              </ul>
               </div>
             </section>
           </div>
@@ -116,7 +118,7 @@
       <div class="intrude-less">
         <header id="header" class="inner">
           <div class="profilepic">
-            <img alt="avatar" src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar">
+            <img src="<?php $this->options->themeUrl();?>tx.png" class="js-avatar">
           </div>
 
           <hgroup>

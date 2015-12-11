@@ -87,7 +87,7 @@ define([], function(){
 			Tips.hide();
 		});
 		
-        if(yiliaConfig.open_in_new == true){
+        if(yiliaConfig.open_in_new == true && yiliaConfig.isHome===true){
             $(".article a[href]").attr("target", "_blank");
         }
         

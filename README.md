@@ -1,10 +1,17 @@
 # Yilia Theme Port To Typecho
 
-## Detail
-modify on <https://coding.net/u/yqc/p/Yilia-Typecho/git>
+####主题说明
 
-base on <https://github.com/litten/hexo-theme-yilia>
+Yilia原来是一个Hexo的主题，作者为[Litten](http://litten.github.io/)
 
-# Demo
+这里是Yilia的Typecho移植+个人修改版
 
-demo on <http://shyling.com>
+如有与原主题不同之处纯属正常。
+
+侧栏的社交链接请手动修改(我不用微博)
+
+注意修改头像图片呀。。
+
+####主题演示
+
+DEMO ON <https://shyling.com>

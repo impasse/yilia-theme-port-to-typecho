@@ -55,8 +55,8 @@ require([], function (){
 
 	//是否使用fancybox
 	if(yiliaConfig.fancybox === true){
-        $("<link>").attr({ rel: "stylesheet",type: "text/css",href: 'http://apps.bdimg.com/libs/fancybox/2.1.5/jquery.fancybox.min.css'}).appendTo("head");
-		require(['http://apps.bdimg.com/libs/fancybox/2.1.5/jquery.fancybox.min.js'], function(pc){
+        $("<link/>").attr({ rel: "stylesheet",type: "text/css",href: '//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css'}).appendTo("head");
+		require(['//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js'], function(pc){
 			var isFancy = $(".isFancy");
 			if(isFancy.length != 0){
 				var imgArr = $(".article-inner img");
@@ -68,22 +68,29 @@ require([], function (){
 				$(".article-inner .fancy-ctn").fancybox();
 			}
 		});
-		
 	}
+	
 	if(yiliaConfig.prettify === true){
         if($("code").length>0){
         $("<link>").attr({ rel: "stylesheet",type: "text/css",href: yiliaConfig.base_url+"/css/desert.css"}).appendTo("head");
-        require(['http://apps.bdimg.com/libs/prettify/r298/prettify.min.js'],function(){
+        require(['//cdn.bootcss.com/prettify/r298/prettify.min.js'],function(){
              $("pre").addClass("prettyprint");
              prettyPrint();
         });
         }
 	}
 	
+	if (yiliaConfig.isHome === true) {
+		require([yiliaConfig.base_url + '/js/duoshuo-comments-count.js'], function () {
+			console.log("Loading comments count");
+		});
+	}
+	
 	//for fast add netease cloud music
 	$(".article-entry a").each(function(){
         var re = /http:\/\/music\.163\.com\/#\/m\/song\?id=([0-9]+)/;
-        var match = $(this).attr("href").match(re);
+		var match = $(this).attr("href") || '';
+        match = match.match(re);
         if(match!=null){
             var w = $(this).parent().width();
             var h = $(this).height();
@@ -94,7 +101,7 @@ require([], function (){
                 w=280;
             }
             $(this).replaceWith(
-            $('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width='+w+' height=86 src="http://music.163.com/outchain/player?type=2&id='+match[1]+'&auto=0&height=66"></iframe>')
+            $('<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width='+w+' height=86 src="//music.163.com/outchain/player?type=2&id='+match[1]+'&auto=0&height=66"></iframe>')
             );
         }
 	});

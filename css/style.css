@@ -574,6 +574,12 @@ a {
     font-size: 14px
 }
 
+#js-friends>ul{
+    overflow-x:hidden;
+    overflow-y: auto;
+    height: 240px;
+}
+
 #header .switch-area .switch-wrap {
     -webkit-transition: -webkit-transform .3s ease-in;
     transition: transform .3s ease-in;
@@ -777,7 +783,7 @@ a {
 }
 
 .article img {
-    max-width: 100%
+    max-width: 75%
 }
 
 @-webkit-keyframes cd-bounce-1 {
@@ -910,8 +916,7 @@ a {
     background: #aaa;
     display: inline-block;
     margin-right: 10px;
-    float: left;
-    margin-top: 9pt
+    vertical-align: middle
 }
 
 .article-entry ol,.article-entry ul {
@@ -2297,26 +2302,29 @@ pre .javascript .function,pre .keyword {
     padding-right: 16px;
     font-weight: 900;
 }
-#textarea {
-    min-height: 100px;
-}
 .comments .submit {
-    margin-left: 102px;
+    margin:0 auto;
     color: white;
+    display:block;
     background-color: #696969;
-    padding: 10px;
+    padding: 7px;
+    cursor:pointer;
     border: 0;
 }
 .comments input[type=text],.comments input[type=url],.comments input[type=email],#textarea {
+    border-right:0;
     border-bottom: rgba(0,0,0,.2) solid 1px;
-    border-right: rgba(0,0,0,.2) solid 1px;
     border-top: 0;
     border-left: 0;
+    resize:none;
     width: 70%;
     outline: none;
+    line-height:36px;
+    font-size:16px;
+    background-color:#fefefe;
 }
 @media screen and (max-width: 800px) {
-    .comments input[type=text],.comments input[type=url],.comments input[type=email],.textarea {
+    .comments input[type=text],.comments input[type=url],.comments input[type=email],#textarea {
         width:100%
     }
     .comments label {
