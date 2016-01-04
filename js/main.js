@@ -2,14 +2,14 @@ require([], function (){
 
 	var isMobileInit = false;
 	var loadMobile = function(){
-		require([yiliaConfig.base_url+'/js/mobile.js'], function(mobile){
+		require([yiliaConfig.base_url+'js/mobile.js'], function(mobile){
 			mobile.init();
 			isMobileInit = true;
 		});
 	}
 	var isPCInit = false;
 	var loadPC = function(){
-		require([yiliaConfig.base_url+'/js/pc.js'], function(pc){
+		require([yiliaConfig.base_url+'js/pc.js'], function(pc){
 			pc.init();
 			isPCInit = true;
 		});
@@ -72,7 +72,7 @@ require([], function (){
 	
 	if(yiliaConfig.prettify === true){
         if($("code").length>0){
-        $("<link>").attr({ rel: "stylesheet",type: "text/css",href: yiliaConfig.base_url+"/css/desert.css"}).appendTo("head");
+        $("<link>").attr({ rel: "stylesheet",type: "text/css",href: yiliaConfig.base_url+"css/desert.css"}).appendTo("head");
         require(['//cdn.bootcss.com/prettify/r298/prettify.min.js'],function(){
              $("pre").addClass("prettyprint");
              prettyPrint();
@@ -81,7 +81,7 @@ require([], function (){
 	}
 	
 	if (yiliaConfig.isHome === true) {
-		require([yiliaConfig.base_url + '/js/duoshuo-comments-count.js'], function () {
+		require([yiliaConfig.base_url + 'js/duoshuo-comments-count.js'], function () {
 			console.log("Loading comments count");
 		});
 	}
