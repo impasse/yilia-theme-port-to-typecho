@@ -3,7 +3,10 @@
       <div class="outer">
         <div id="footer-info">
           <div class="footer-left">
-            &copy;  <?php echo date('Y');?>  <a href="<?php $this->options->siteurl(); ?>"><?php $this->options->title(); ?></a>|<a href="http://www.miitbeian.gov.cn/" rel="nofollow"  target="_blank">豫ICP备15030578号</a>
+	  &copy;  <?php echo date('Y');?>  <a href="<?php $this->options->siteurl(); ?>"><?php $this->options->title(); ?></a><?php
+	  if(!empty($this->options->icp)): ?>
+		  |<a href="http://www.miitbeian.gov.cn/" rel="nofollow"  target="_blank"><?php echo $this->options->icp; ?></a>
+<?php endif;  ?>
           </div>
           <div class="footer-right">
             <a href="http://typecho.org/" target="_blank">Typecho</a>  Theme <a href="https://github.com/lingmm/yilia-theme-port-to-typecho" target="_blank">Yilia</a> by Litten

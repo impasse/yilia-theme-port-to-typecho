@@ -5,7 +5,7 @@ function themeConfig($form) {
     $form->addInput($github_url);
      $weibo_url = new Typecho_Widget_Helper_Form_Element_Text('weibo_url',NULL,NULL,'新浪微博地址','首页的新浪微博地址图标链接地址');
      $form->addInput($weibo_url);
-     $duoshuo = new Typecho_Widget_Helper_Form_Element_Text('duoshuo',NULL,NULL,'多说域名','多说代码中的ShortName');
+     $duoshuo = new Typecho_Widget_Helper_Form_Element_Text('duoshuo',NULL,NULL,'多说域名','多说代码中的ShortName,不包含.duoshuo.com');
      $form->addInput($duoshuo);
      $jiathis = new Typecho_Widget_Helper_Form_Element_Text('jiathis',NULL,NULL,'jiathis的UID','JiaThis代码中的UID');
      $form->addInput($jiathis);
@@ -17,6 +17,8 @@ function themeConfig($form) {
      $form->addInput($aboutme);
      $analysis = new Typecho_Widget_Helper_Form_Element_Textarea('analysis', NULL, NULL, _t('页面统计'),'放置页面统计代码');
      $form->addInput($analysis);
+     $icp = new Typecho_Widget_Helper_Form_Element_Text('icp',NULL,NULL,_t('ICP备案号'),'页面底部的ICP备案号');
+     $form->addInput($icp);
 }
 /* 自定tags的输出格式 */
 function yqctags($widget, $split = ',', $default = NULL){
