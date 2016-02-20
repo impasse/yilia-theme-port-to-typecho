@@ -821,7 +821,7 @@ a {
 
 .article-index .brief:before {
     display: inline-block;
-    content: "â€œ";
+    content: "“";
     font-family: serif;
     font-size: 30px;
     float: left;
@@ -1230,7 +1230,7 @@ a {
 
 .archives .archive-article-title span:before {
     display: inline-block;
-    content: "â€œ";
+    content: "“";
     font-family: serif;
     font-size: 30px;
     float: left;
